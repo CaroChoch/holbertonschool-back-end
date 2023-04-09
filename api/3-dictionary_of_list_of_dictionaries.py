@@ -18,7 +18,7 @@ def api():
     """
 
     # User information
-    user_response = requests.get(f"{API_URL}/users/").json()
+    user_resp = requests.get(f"{API_URL}/users/").json()
 
     # Todo list for the given user
     todo_response = requests.get(f"{API_URL}/todos").json()
@@ -33,7 +33,7 @@ def api():
             dictionary_user[user_id] = []
         dictionary_user[user_id].append({
             "username": next(user[
-            'username'] for user in user_response if user['id'] == user_id),
+                'username'] for user in user_resp if user['id'] == user_id),
             "task": task['title'],
             "completed": task['completed']
         })
