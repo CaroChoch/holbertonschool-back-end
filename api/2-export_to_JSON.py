@@ -39,8 +39,7 @@ def api():
     with open("{}.json".format(USER_ID), 'w') as jsonfile:
         jsonfile.write(json.dumps(data))
         jsonfile.close()
-   
-        
+
 
 if __name__ == "__main__":
     api()
